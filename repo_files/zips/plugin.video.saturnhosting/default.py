@@ -376,6 +376,9 @@ def addonsettings(url,description):
 		else:
 			xbmcaddon.Addon().setSetting('update','true')
 			xbmc.executebuiltin('Container.Refresh')
+	elif url.endswith('.apk'):
+		from resources.modules import apkinstaller
+		apkinstaller.install(description,url)
 	
 		
 def advancedsettings(device):
@@ -534,8 +537,14 @@ def num2day(num):
 def extras():
 	tools.addDir('Run a Speed Test','ST',10,icon,fanart,'')
 	tools.addDir('Setup PVR Guide','tv',10,icon,fanart,'')
+	tools.addDir('APK Installer','url',17,icon,fanart,'')
 	tools.addDir('Clear Cache','CC',10,icon,fanart,'')
 	
+def apkdownloads():
+	open = requests.get('https://github.com/sClarkeIsBack/SaturnHosting/raw/master/apk/apks.xml',verify=False).text
+	all  = re.compile('<item>.+?title>(.+?)<.+?link>(.+?)<.+?thumbnail>(.+?)<',re.DOTALL|re.MULTILINE).findall(open)
+	for name,url,icon in all:
+		tools.addDir(name,url,10,icon,fanart,name)
 
 params=tools.get_params()
 url=None
@@ -627,5 +636,8 @@ elif mode==15:
 	
 elif mode==16:
 	extras()
+	
+elif mode==17:
+	apkdownloads()
 
 xbmcplugin.endOfDirectory(int(sys.argv[1]))
