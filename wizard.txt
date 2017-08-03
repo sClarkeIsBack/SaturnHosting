@@ -1,8 +1,8 @@
 
 
-id="plugin.program.aftermathwizard"
-version="0.1.0"
-zip="https://github.com/sClarkeIsBack/SaturnHosting/raw/master/repo_files/zips/plugin.program.saturnhostingwizard.zip"
+id="plugin.program.saturnhostingwizard"
+version="1.0.0"
+zip="https://github.com/sClarkeIsBack/SaturnHosting/raw/master/repo_files/zips/plugin.program.saturnhostingwizard/plugin.program.saturnhostingwizard.zip"
 
 name="Test build 1"
 version="0.2"
