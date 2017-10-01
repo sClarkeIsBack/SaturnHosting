@@ -4,6 +4,6 @@ id   = b.b64decode('cGx1Z2luLnZpZGVvLnNhdHVybmhvc3Rpbmc=')
 
 name = b.b64decode('U2F0dXJuIEhvc3Rpbmc=')
 
-host = b.b64decode('aHR0cDovL2VjbGlwc2UtaXB0di5kZG5zLm5ldA==')
+host = b.b64decode('aHR0cDovL3NhdHVybmhvc3RpbmcuZGRucy5uZXQ=')
 
 port = b.b64decode('MjU0NjE=')
